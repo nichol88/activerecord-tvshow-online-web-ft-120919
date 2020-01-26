@@ -1,6 +1,7 @@
 class Show < ActiveRecord::Base
   def highest_rating
-    binding.pry
+    shows = Show.all
+    shows.max_by(:rating)
   end
 
   def most_popular_show
