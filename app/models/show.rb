@@ -4,7 +4,7 @@ class Show < ActiveRecord::Base
     shows.max_by { |show| show.rating }.rating
   end
 
-  def most_popular_show
+  def selfmost_popular_show
     shows = Show.all
     shows.max_by { |show| show.rating }
   end
