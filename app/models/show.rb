@@ -20,11 +20,11 @@ class Show < ActiveRecord::Base
   end
 
   def self.popular_shows
-    Show.all.select { |show| show.rating.to_i > 5}
+    Show.all.select { |show| show.rating.to_i > 5 }
   end
 
   def self.shows_by_alphabetical_order
-
+    Show.all.sort_by { |show| show.name}
   end
 
 end
