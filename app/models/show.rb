@@ -7,23 +7,23 @@ class Show < ActiveRecord::Base
     Show.all.max_by { |show| show.rating }
   end
 
-  def lowest_rating
+  def self.lowest_rating
     least_popular_show.rating
   end
 
-  def least_popular_show
+  def self.least_popular_show
     Show.all.min_by { |show| show.rating }
   end
 
-  def ratings_sum
+  def self.ratings_sum
     Show.all.sum{|show| show.rating}
   end
 
-  def popular_shows
+  def self.popular_shows
 
   end
 
-  def shows_by_alphabetical_order
+  def self.shows_by_alphabetical_order
 
   end
 
