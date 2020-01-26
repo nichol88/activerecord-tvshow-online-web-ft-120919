@@ -16,11 +16,11 @@ class Show < ActiveRecord::Base
   end
 
   def self.ratings_sum
-    Show.all.sum{|show| show.rating}
+    Show.all.sum { |show| show.rating}
   end
 
   def self.popular_shows
-
+    Show.all.select { |show| show.rating.to_i > 5}
   end
 
   def self.shows_by_alphabetical_order
